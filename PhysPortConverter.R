@@ -51,6 +51,8 @@ import.fix.and.export <- function(stringfilename, assessmentnamestring) {
   
   # Create key import name
   keyname = paste0(assessmentnamestring,"key.csv")
+  
+  # Import the actual key
   key <- read.csv(keyname, stringsAsFactors = FALSE, header = FALSE)
   
   # Fix the table, using the given key, and convert all of the column types to "character"
