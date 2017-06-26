@@ -49,9 +49,13 @@ import.fix.and.export <- function(stringfilename, assessmentnamestring) {
   # Create the string for the exported fixed table
   exportfilename = paste0(filename,"_","FIXED",".csv")
   
+  # Create key import name
+  keyname = paste0(assessmentnamestring,"key.csv")
+  key <- read.csv(keyname, stringsAsFactors = FALSE, header = FALSE)
+  
   # Fix the table, using the given key, and convert all of the column types to "character"
   # rather than "list"
-  FixedPostTable <- lapply(fix.responses(ImportToPhysPort, FCIkey), as.character)
+  FixedPostTable <- lapply(fix.responses(ImportToPhysPort, key), as.character)
   
   # Writes the fixed table out to a csv file
   write.csv(FixedPostTable, file = exportfilename)
