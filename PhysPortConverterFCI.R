@@ -27,8 +27,11 @@ return (matrix)}
 # Clearly, I didn't get far
 # lapply(unique_vals, function(elem) elem[2])
 
+# Create the string for the exported fixed table
 exportfilename = paste0(filename,"_","FIXED",".csv")
-# Copies the fixed table to another variable
+
+# Fix the table, using the given key, and convert all of the column types to "character"
+# rather than "list"
 FixedPostTable <- lapply(fix.responses(ImportToPhysPort, FCIkey), as.character)
 
 # Writes the fixed table out to a csv file
