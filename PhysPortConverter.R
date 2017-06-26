@@ -7,13 +7,13 @@
 # not the case!
 
 # Imports the data file
-filename = "211_2015Sp_FCI_POST"
-filename_ext = paste0(filename,".csv")
-ImportToPhysPort <- read.csv(filename, stringsAsFactors = FALSE)
+# filename = "211_2015Sp_FCI_POST"
+# filename_ext = paste0(filename,".csv")
+# ImportToPhysPort <- read.csv(filename, stringsAsFactors = FALSE)
 
 # Reads in the FCI key.  This file will NOT be made public!  If you need
 # access to it, please go through the proper channels
-FCIkey <- read.csv("FCIkey.csv", stringsAsFactors = FALSE, header = FALSE)
+# FCIkey <- read.csv("FCIkey.csv", stringsAsFactors = FALSE, header = FALSE)
 
 # function to fix the responses.  This takes in a matrix (our imported csv)
 # and goes through each of the question columns, replacing all "$" with 
@@ -28,14 +28,14 @@ return (matrix)}
 # lapply(unique_vals, function(elem) elem[2])
 
 # Create the string for the exported fixed table
-exportfilename = paste0(filename,"_","FIXED",".csv")
+# exportfilename = paste0(filename,"_","FIXED",".csv")
 
 # Fix the table, using the given key, and convert all of the column types to "character"
 # rather than "list"
-FixedPostTable <- lapply(fix.responses(ImportToPhysPort, FCIkey), as.character)
+# FixedPostTable <- lapply(fix.responses(ImportToPhysPort, FCIkey), as.character)
 
 # Writes the fixed table out to a csv file
-write.csv(FixedPostTable, file = exportfilename)
+# write.csv(FixedPostTable, file = exportfilename)
 
 # function that takes as input the filename of the data to import, and the assessment
 # (FCI, CSEM)
