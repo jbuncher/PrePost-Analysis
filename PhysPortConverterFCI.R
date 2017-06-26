@@ -12,7 +12,7 @@ ImportToPhysPort <- read.csv(filename, stringsAsFactors = FALSE)
 
 # Reads in the FCI key.  This file will NOT be made public!  If you need
 # access to it, please go through the proper channels
-FCIkey <- read.csv("FCIkey.csv", stringsAsFactors = FALSE)
+FCIkey <- read.csv("FCIkey.csv", stringsAsFactors = FALSE, header = FALSE)
 
 # function to fix the responses.  This takes in a matrix (our imported csv)
 # and goes through each of the question columns, replacing all "$" with 
