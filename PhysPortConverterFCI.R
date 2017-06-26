@@ -29,7 +29,7 @@ return (matrix)}
 
 exportfilename = paste0(filename,"_","FIXED",".csv")
 # Copies the fixed table to another variable
-FixedPostTable <- fix.responses(ImportToPhysPort, FCIkey)
+FixedPostTable <- lapply(fix.responses(ImportToPhysPort, FCIkey), as.character)
 
 # Writes the fixed table out to a csv file
 write.csv(FixedPostTable, file = exportfilename)
