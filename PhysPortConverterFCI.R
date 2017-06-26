@@ -17,8 +17,8 @@ read.csv("FCIkey.csv")
 # and goes through each of the question columns, replacing all "$" with 
 # the actual response ("A", "B",..., or "E").
 
-fix.responses <- function(matrix) {
-  for (i in 1:30) matrix[i+4][matrix[i+4] == "$"] <- FCIkey[i]
+fix.responses <- function(matrix,keyfile) {
+  for (i in 1:length(keyfile)) matrix[i+4][matrix[i+4] == "$"] <- keyfile[i]
 return (matrix)}
 
 # This was some "lapply" stuff I was trying rather than using the loop.
