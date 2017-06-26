@@ -7,7 +7,7 @@
 # not the case!
 
 # Imports the data file
-filename = "~/Teaching/NDSU/Phys 211/2015 Spring/FCI PrePost Test/ImportToPhysPort_Post_2015.csv"
+filename = "211_2015Sp_FCI_PRE.csv"
 ImportToPhysPort <- read.csv(filename, stringsAsFactors = FALSE)
 
 # Reads in the FCI key.  This file will NOT be made public!  If you need
@@ -26,7 +26,7 @@ return (matrix)}
 # Clearly, I didn't get far
 # lapply(unique_vals, function(elem) elem[2])
 
-exportfilename = paste0("testname","_","fixed",".csv")
+exportfilename = paste0(filename,"_","FIXED",".csv")
 # Copies the fixed table to another variable
 FixedPostTable <- fix.responses(ImportToPhysPort, FCIkey)
 
