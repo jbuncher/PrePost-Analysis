@@ -7,7 +7,7 @@
 # not the case!
 
 # Imports the data file
-filename = "211_2015Sp_FCI_PRE"
+filename = "211_2015Sp_FCI_POST"
 filename_ext = paste0(filename,".csv")
 ImportToPhysPort <- read.csv(filename, stringsAsFactors = FALSE)
 
@@ -36,3 +36,13 @@ FixedPostTable <- lapply(fix.responses(ImportToPhysPort, FCIkey), as.character)
 
 # Writes the fixed table out to a csv file
 write.csv(FixedPostTable, file = exportfilename)
+
+# function that takes as input the filename of the data to import, and the assessment
+# (FCI, CSEM)
+
+import.fix.and.export <- function(stringfilename, assessmentnamestring) {
+  # Imports the data file
+  filename = stringfilename
+  filename_ext = paste0(filename,".csv")
+  ImportToPhysPort <- read.csv(filename, stringsAsFactors = FALSE)
+}
