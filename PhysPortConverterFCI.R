@@ -7,7 +7,8 @@
 # not the case!
 
 # Imports the data file
-filename = "211_2015Sp_FCI_PRE.csv"
+filename = "211_2015Sp_FCI_PRE"
+filename_ext = paste0(filename,".csv")
 ImportToPhysPort <- read.csv(filename, stringsAsFactors = FALSE)
 
 # Reads in the FCI key.  This file will NOT be made public!  If you need
